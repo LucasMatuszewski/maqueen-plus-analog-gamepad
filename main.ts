@@ -35,11 +35,17 @@ basic.forever(function () {
         DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.BLUE)
         basic.pause(500)
         music.playTone(988, music.beat(BeatFraction.Whole))
-    } else {
-        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.OFF)
-        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.OFF)
     }
 })
 basic.forever(function () {
     DFRobotMaqueenPlus.servoRun(Servos.S1, angle)
+})
+basic.forever(function () {
+    if (Key == "Button A") {
+        basic.showIcon(IconNames.Sad)
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBA, Color.RED)
+    } else if (Key == "Button B") {
+        basic.showIcon(IconNames.Happy)
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBA, Color.YELLOW)
+    }
 })
